@@ -53,6 +53,7 @@ a{
     outline: none;
     z-index: 0;
     cursor: pointer;
+    margin: 15px 0px ;
     &::before{
         position: absolute;
         content: "";
@@ -74,9 +75,7 @@ a{
 }
 
 // header
-.App{
-    height: 2000px;
-}
+
 
 
 .header{
@@ -271,3 +270,57 @@ height: auto;
 }
 
 // Services
+
+// About 
+
+.about{
+    .container{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        .img{
+            flex: 1  400px;
+            img{
+                width: 100%;
+                height: 500px;
+            }
+        }
+        .con{
+            flex: 1 1 400px;
+            h2{
+                text-transform: capitalize;
+            }
+            p{
+                color: #999;
+            }
+            button{
+                @include btn()
+            }
+            .all{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                gap: 10px;
+                .go{
+                    flex: 1 1 200px;
+                    height: 150px;
+                    border: 1px solid #ddd;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    i{
+                        color: $btn-color;
+                        cursor: pointer;
+                        background-color: $main;
+                        padding: 20px;
+                        border-radius: 50%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// About 

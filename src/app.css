@@ -38,10 +38,6 @@ a {
   color: rgb(250, 6, 55);
 }
 
-.App {
-  height: 2000px;
-}
-
 .header {
   background-color: #ddd;
   z-index: 1000;
@@ -174,6 +170,7 @@ a {
   outline: none;
   z-index: 0;
   cursor: pointer;
+  margin: 15px 0px;
 }
 .home .container .con button::before {
   position: absolute;
@@ -271,6 +268,7 @@ a {
   outline: none;
   z-index: 0;
   cursor: pointer;
+  margin: 15px 0px;
 }
 .service .container .box button::before {
   position: absolute;
@@ -296,4 +294,106 @@ a {
   .service .container {
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   }
+}
+.about .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 20px;
+}
+.about .container .img {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 400px;
+          flex: 1 400px;
+}
+.about .container .img img {
+  width: 100%;
+  height: 500px;
+}
+.about .container .con {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 400px;
+          flex: 1 1 400px;
+}
+.about .container .con h2 {
+  text-transform: capitalize;
+}
+.about .container .con p {
+  color: #999;
+}
+.about .container .con button {
+  padding: 8px 20px;
+  text-transform: capitalize;
+  font-weight: bold;
+  background-color: rgb(250, 6, 55);
+  color: white;
+  position: relative;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  z-index: 0;
+  cursor: pointer;
+  margin: 15px 0px;
+}
+.about .container .con button::before {
+  position: absolute;
+  content: "";
+  background-color: black;
+  width: 0%;
+  height: 100%;
+  -webkit-transition: 0.3s linear;
+  transition: 0.3s linear;
+  top: 0%;
+  left: 0%;
+  z-index: -1;
+  border-radius: 6px;
+}
+.about .container .con button:hover::before {
+  width: 100%;
+}
+.about .container .con button:hover {
+  color: white;
+}
+.about .container .con .all {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 10px;
+}
+.about .container .con .all .go {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 200px;
+          flex: 1 1 200px;
+  height: 150px;
+  border: 1px solid #ddd;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.about .container .con .all .go i {
+  color: rgb(250, 6, 55);
+  cursor: pointer;
+  background-color: rgb(238, 212, 212);
+  padding: 20px;
+  border-radius: 50%;
 }
