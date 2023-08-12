@@ -617,6 +617,13 @@ a {
       }
     }
   }
+  h3{
+    border-top: 1px solid $btn-color;
+    text-align: center;
+    margin: 0%;
+    padding: 30px 0px;
+    color: $btn-color;
+  }
 }
 
 // Footer

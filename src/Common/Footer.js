@@ -1,6 +1,13 @@
 import React from "react";
+import { useTypewriter } from "react-simple-typewriter";
 
 export default function Footer() {
+
+    const [text] = useTypewriter({
+        words : ["Jemy" , "Front-End-Developer"],
+        loop : {}
+    })
+
   return (
     <div className="footer">
       <div className="container">
@@ -86,6 +93,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
+      <h3>Made By {text}</h3>
     </div>
   );
 }
