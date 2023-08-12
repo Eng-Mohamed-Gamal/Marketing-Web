@@ -1,428 +1,484 @@
-$main : rgb(238, 212, 212) ; 
-$btn-color : rgb(250, 6, 55) ;
-$box-shadow :   0px 0px 20px #ddd ;
+$main: rgb(238, 212, 212);
+$btn-color: rgb(250, 6, 55);
+$box-shadow: 0px 0px 20px #ddd;
 
-
-
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
-html{
-    scroll-behavior: smooth;
+html {
+  scroll-behavior: smooth;
 }
 
-body{
-    margin: 0%;
-    padding: 0%;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+body {
+  margin: 0%;
+  padding: 0%;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
-li{
-    list-style: none;
+li {
+  list-style: none;
 }
-a{
-    text-decoration: none;
+a {
+  text-decoration: none;
 }
-.container{
-    width: 90%;
-    margin: auto;
+.container {
+  width: 90%;
+  margin: auto;
+}
 
-}
-
-.cen{
-    text-align: center;
-    text-transform: capitalize;
-    margin: 40px 0px ;
-    span{
-        border-radius: 5px;
-        padding: 8px 12px;
-        background-color: $main;
-        color: $btn-color;
-
-    }
+.cen {
+  text-align: center;
+  text-transform: capitalize;
+  margin: 40px 0px;
+  span {
+    border-radius: 5px;
+    padding: 8px 12px;
+    background-color: $main;
+    color: $btn-color;
+  }
 }
 
 @mixin btn {
-    padding: 8px 20px ;
-    text-transform: capitalize;
-    font-weight: bold;
-    background-color: $btn-color;
-    color: white;
-    position: relative;
+  padding: 8px 20px;
+  text-transform: capitalize;
+  font-weight: bold;
+  background-color: $btn-color;
+  color: white;
+  position: relative;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  z-index: 0;
+  cursor: pointer;
+  margin: 15px 0px;
+  &::before {
+    position: absolute;
+    content: "";
+    background-color: black;
+    width: 0%;
+    height: 100%;
+    transition: 0.3s linear;
+    top: 0%;
+    left: 0%;
+    z-index: -1;
     border-radius: 6px;
-    border: none;
-    outline: none;
-    z-index: 0;
-    cursor: pointer;
-    margin: 15px 0px ;
-    &::before{
-        position: absolute;
-        content: "";
-        background-color: black;
-        width: 0%;
-        height: 100%;
-        transition: 0.3s linear;
-        top: 0%;
-        left: 0%;
-        z-index: -1;
-        border-radius: 6px;
-    }
-    &:hover::before{
-        width: 100%;
-    }
-    &:hover{
-        color: white;
-    }
+  }
+  &:hover::before {
+    width: 100%;
+  }
+  &:hover {
+    color: white;
+  }
 }
 
 // header
 
-
-
-.header{
-    background-color: #ddd;
-    z-index: 1000;
-    position: sticky;
-    top: 0%;
-    .container{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        h1{
-            color: $btn-color;
-        }
-        ul{
-            z-index: 1000;
-            display: flex;
-            gap: 15px;
-            a{
-                color: $btn-color;
-                font-size: 17px;
-                border-radius: 6px;
-                &:hover{
-                    transition: 0.3s linear ;
-                    background-color: black;
-                    color: white;
-                    padding: 5px 10px ;
-
-                }
-            }
-        }
-        i{
-            color: #999;
-            font-size: 20px;
-            display: none;
-            cursor: pointer;
-            background-color: $main;
-            padding: 10px;
-
-        }
+.header {
+  background-color: #ddd;
+  z-index: 1000;
+  position: sticky;
+  top: 0%;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h1 {
+      color: $btn-color;
     }
-    box-shadow: $box-shadow;
-}
-
-@media (max-width : 900px ) {
-    .header{
-        .container {
-            i{
-                display: block;
-            }
-            ul{
-                transform: translateX(-100%);
-                margin: 0%;
-                padding: 0%;
-                flex-direction: column;
-                position: fixed;
-                top: 80px;
-                left: 0;
-                height: calc(100vh - 80px);
-                background-color: #999;
-                width: 250px;
-                li{
-                    width: 100%;
-                    a{
-                        color: white;
-                        display: block;
-                        width: 100%;
-                        padding: 10px 20px;
-                        &:hover{
-                            padding: 10px 20px;
-                        }
-                    }
-                }
-            }
+    ul {
+      z-index: 1000;
+      display: flex;
+      gap: 15px;
+      a {
+        color: $btn-color;
+        font-size: 17px;
+        border-radius: 6px;
+        &:hover {
+          transition: 0.3s linear;
+          background-color: black;
+          color: white;
+          padding: 5px 10px;
         }
+      }
     }
+    i {
+      color: #999;
+      font-size: 20px;
+      display: none;
+      cursor: pointer;
+      background-color: $main;
+      padding: 10px;
+    }
+  }
+  box-shadow: $box-shadow;
 }
 
-.translate{
-    transform: translateX(0%) !important;
+@media (max-width: 900px) {
+  .header {
+    .container {
+      i {
+        display: block;
+      }
+      ul {
+        transform: translateX(-100%);
+        margin: 0%;
+        padding: 0%;
+        flex-direction: column;
+        position: fixed;
+        top: 80px;
+        left: 0;
+        height: calc(100vh - 80px);
+        background-color: #999;
+        width: 250px;
+        li {
+          width: 100%;
+          a {
+            color: white;
+            display: block;
+            width: 100%;
+            padding: 10px 20px;
+            &:hover {
+              padding: 10px 20px;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
-
-.trans{
-    transition: all 0.3s linear !important ;
+.translate {
+  transform: translateX(0%) !important;
 }
 
-@media (min-width : 901px) {
-     .trans{
-        transition: none !important;
-     }
+.trans {
+  transition: all 0.3s linear !important ;
+}
+
+@media (min-width: 901px) {
+  .trans {
+    transition: none !important;
+  }
 }
 
 // header
 
 // Home
 
-.home{
-background-color: $main;
-position: relative;
-height: auto;
-.container{
+.home {
+  background-color: $main;
+  position: relative;
+  height: auto;
+  .container {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     padding-bottom: 30px;
-    .con{
-        flex: 1 1 400px;
+    .con {
+      flex: 1 1 400px;
 
-        button{
-            @include btn()
-        }
+      button {
+        @include btn();
+      }
     }
-    .img{
-        flex: 1 1 400px;
+    .img {
+      flex: 1 1 400px;
 
-        img{
-            width: 100%;
-         
-        }
+      img {
+        width: 100%;
+      }
     }
-}
-.cloud{
+  }
+  .cloud {
     background-image: url("/public/images/cloud.png");
     background-repeat: repeat-x;
-    background-size: 2000px  200px;
-    height:100px;
+    background-size: 2000px 200px;
+    height: 100px;
     width: 100%;
     position: absolute;
     bottom: 0%;
     left: 0%;
     right: 0%;
-    animation: cloud 10s linear infinite ;
-}
+    animation: cloud 10s linear infinite;
+  }
 
-.c1{
+  .c1 {
     opacity: 0.5;
     height: 140px;
     animation-direction: reverse;
-}
+  }
 }
 @keyframes cloud {
-    from{
-        background-position-x: 0px;
-    }
-    to{
-        background-position-x : 1700px; ;
-    }
+  from {
+    background-position-x: 0px;
+  }
+  to {
+    background-position-x: 1700px;
+  }
 }
 
-@media (max-width : 888px)  {
-    .home{
-        .container{
-            .con{
-                text-align: center;
-            }
-        }
+@media (max-width: 888px) {
+  .home {
+    .container {
+      .con {
+        text-align: center;
+      }
     }
+  }
 }
 
 // Home
 
 // Services
 
-.service{
-    
-    .container{
-        display: grid;
-        grid-template-columns: repeat(auto-fill , minmax(350px , 1fr));
-        gap: 20px;
-        .box{
-            padding: 20px;
-            text-align: center;
-            box-shadow: $box-shadow;
-            h2{
-                text-transform: capitalize;
-                color: #999;
-            }
-            button{
-                @include btn()
-            }
-        }
+.service {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+    .box {
+      padding: 20px;
+      text-align: center;
+      box-shadow: $box-shadow;
+      h2 {
+        text-transform: capitalize;
+        color: #999;
+      }
+      button {
+        @include btn();
+      }
     }
+  }
 }
 
-@media(max-width : 400px) {
-    .service{
-        .container{
-            grid-template-columns: repeat(auto-fill , minmax(260px , 1fr));
-        }
+@media (max-width: 400px) {
+  .service {
+    .container {
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     }
+  }
 }
 
 // Services
 
-// About 
+// About
 
-.about{
-    .container{
+.about {
+  .container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    .img {
+      flex: 1 400px;
+      img {
+        width: 100%;
+        height: 500px;
+      }
+    }
+    .con {
+      flex: 1 1 400px;
+      h2 {
+        text-transform: capitalize;
+      }
+      p {
+        color: #999;
+      }
+      button {
+        @include btn();
+      }
+      .all {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 10px;
+        .go {
+          flex: 1 1 200px;
+          height: 150px;
+          border: 1px solid #ddd;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          i {
+            color: $btn-color;
+            cursor: pointer;
+            background-color: $main;
+            padding: 20px;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+  }
+}
+
+// About
+
+// Portfolio
+
+.portfolio {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+    .box {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: $box-shadow;
+      img {
+        width: 100%;
+        height: 300px;
+        border-radius: 10px;
+      }
+      .abso-1 {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        clip-path: circle(30% at 93% 0);
+        top: 0px;
+        background-color: white;
+        transition: 0.2s linear;
+      }
+      &:hover .abso-1 {
+        clip-path: circle(100%);
+      }
+      &:hover .abso-2 {
+        transition: 0.4s linear;
+        top: 50%;
+      }
+      .abso-2 {
+        position: absolute;
+        width: 100%;
+        top: 150%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        h1 {
+          margin-bottom: 0%;
+        }
+        p {
+          margin-top: 0%;
+          font-weight: bold;
+        }
+      }
+      h1.gre {
+        position: absolute;
+        top: 10px;
+        right: 30px;
+        margin: 0%;
+      }
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .portfolio {
+    .container {
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    }
+  }
+}
+
+// Portfolio
+
+// Pricing
+
+.price {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+    .box {
+      box-shadow: $box-shadow;
+      text-align: center;
+      h1 {
+        color: $btn-color;
+        span {
+          font-size: 15px;
+        }
+      }
+      p {
+        color: #999;
+      }
+      button {
+        @include btn();
+      }
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .price {
+    .container {
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    }
+  }
+}
+
+// Pricing
+
+// Review
+
+.review {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+    .box {
+      box-shadow: $box-shadow;
+      padding: 20px;
+      p {
+        color: #999;
+      }
+      .flex{
         display: flex;
         align-items: center;
-        flex-wrap: wrap;
-        gap: 20px;
-        .img{
-            flex: 1  400px;
-            img{
-                width: 100%;
-                height: 500px;
-            }
-        }
-        .con{
-            flex: 1 1 400px;
+        justify-content: space-between;
+        .flex-in{
+          display: flex;
+          align-items: center;
+          gap: 20px;
+          img{
+            width: 80px ;
+            height: 80px;
+            border-radius: 50%;
+          }
+          .con{
             h2{
-                text-transform: capitalize;
+              margin: 0%;
             }
-            p{
-                color: #999;
+            i{
+              color: $btn-color;
             }
-            button{
-                @include btn()
-            }
-            .all{
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: space-between;
-                gap: 10px;
-                .go{
-                    flex: 1 1 200px;
-                    height: 150px;
-                    border: 1px solid #ddd;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    flex-direction: column;
-                    i{
-                        color: $btn-color;
-                        cursor: pointer;
-                        background-color: $main;
-                        padding: 20px;
-                        border-radius: 50%;
-                    }
-                }
-            }
+          }
         }
+        i.fa-quote-right{
+          font-size: 50px;
+          color: $main;
+        }
+      }
+      
     }
+  }
 }
 
-// About 
-
-// Portfolio
-
-.portfolio{
-    
-    .container{
-        display: grid;
-        grid-template-columns: repeat(auto-fill , minmax(350px , 1fr));
-        gap: 20px;
-        .box{
-            position: relative;
-            overflow: hidden;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: $box-shadow;
-            img{
-                width: 100%;
-                height: 300px;
-                border-radius: 10px;
-            }
-            .abso-1{
-                position: absolute;
-                width: 100%;
-                height:100%;
-                clip-path:circle(30% at 93% 0) ;
-                top: 0px;
-                background-color: white;
-                transition: 0.2s linear;
-     
-            }
-            &:hover .abso-1 {
-                clip-path:circle(100%) ;
-            }
-            &:hover .abso-2 {
-                transition: 0.4s linear;
-                top: 50%;
-            }
-            .abso-2{
-                position: absolute;
-                width: 100%;
-                top: 150%;
-                left: 50%;
-                transform: translate(-50% , -50%);
-                h1{
-                    margin-bottom: 0%;
-                }
-                p{
-                    margin-top: 0%;
-                    font-weight: bold;
-                }
-            }
-            h1.gre{
-                position: absolute;
-                top: 10px;
-                right: 30px;
-                margin: 0%;
-            }
+@media (max-width: 400px) {
+  .review {
+    .container {
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      .box{
+        .flex{
+          align-items: flex-start;
+          .flex-in{
+            flex-direction: column;
+          }
         }
+      }
     }
+  }
 }
 
-@media(max-width : 400px) {
-    .portfolio{
-        .container{
-            grid-template-columns: repeat(auto-fill , minmax(260px , 1fr));
-                img{
-                    width: 100%;
-                }
-            
-        }
-    }
-}
+// Review
 
-// Portfolio
 
-// Pricing
-
-.price{
-    .container{
-        display: grid;
-        grid-template-columns: repeat(auto-fill , minmax(350px , 1fr));
-        gap: 20px;
-        .box{
-            box-shadow: $box-shadow;
-            text-align: center;
-            h1{
-                color: $btn-color;
-                span{
-                    font-size: 15px;
-                }
-            }
-            p{
-                color: #999;
-            }
-            button {
-                @include btn()
-            }
-        }
-    }
-}
-
-// Pricing
