@@ -481,4 +481,106 @@ a {
 
 // Review
 
+// Contact
+
+.contact{
+  padding-bottom: 50px;
+  .container{
+    .grid-1{
+      display: grid;
+      grid-template-columns: repeat(auto-fill , minmax(350px , 1fr));
+      gap: 20px;
+      .box{
+        box-shadow: $box-shadow;
+        padding: 20px;
+        text-align: center;
+        i{
+          background-color: $main;
+          padding: 20px;
+          border-radius: 50%;
+          color: $btn-color;
+          font-size: 25px;
+        }        
+        p{
+          color: #999;
+          font-weight: bold;
+        }
+      }
+      margin-bottom: 20px;
+    }
+
+    .flex{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      iframe{
+        max-width: 100%;
+        box-shadow: $box-shadow;
+        padding: 20px;
+        border: none;
+        flex : 1 1 40%;
+        height: 450px;
+        box-sizing: border-box;
+      }
+      form{
+        flex : 1 1 40%;
+        box-shadow: $box-shadow;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        height: 450px;
+        input{
+          padding: 10px 0px;
+          margin: 10px 0px;
+          &::placeholder{
+            transform: translateX(10px);
+          }
+        }
+        textarea{
+          resize: none;
+          &::placeholder{
+            transform: translateX(10px);
+          }
+          overflow-x: hidden;
+        }
+        input[type = submit] {
+          @include btn();
+          width: 200px;
+          &:hover{
+            transition: 0.3s linear;
+            background-color: black;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media (max-width: 450px) {
+  .contact {
+    .container {
+     .grid-1{
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+     }
+    }
+  }
+}
+@media (max-width: 550px) {
+  .contact {
+    .container {
+     .flex{
+     form{
+      input{
+        margin: 15px 0px;
+      }
+      height: 500px;
+     }
+     }
+    }
+  }
+}
+
+// Contact
+
 

@@ -1,6 +1,7 @@
 
 import Header from './Common/Header';
 import About from './Components/About';
+import Contact from './Components/Contact';
 import Home from './Components/Home';
 import Portfolio from './Components/Portfolio';
 import Pricing from './Components/Pricing';
@@ -18,6 +19,7 @@ function App() {
       <Portfolio></Portfolio>
       <Pricing></Pricing>
       <Review></Review>
+      <Contact></Contact>
     </div>
   );
 }

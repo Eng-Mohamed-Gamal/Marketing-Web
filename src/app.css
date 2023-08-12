@@ -589,3 +589,162 @@ a {
             flex-direction: column;
   }
 }
+.contact {
+  padding-bottom: 50px;
+}
+.contact .container .grid-1 {
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.contact .container .grid-1 .box {
+  -webkit-box-shadow: 0px 0px 20px #ddd;
+          box-shadow: 0px 0px 20px #ddd;
+  padding: 20px;
+  text-align: center;
+}
+.contact .container .grid-1 .box i {
+  background-color: rgb(238, 212, 212);
+  padding: 20px;
+  border-radius: 50%;
+  color: rgb(250, 6, 55);
+  font-size: 25px;
+}
+.contact .container .grid-1 .box p {
+  color: #999;
+  font-weight: bold;
+}
+.contact .container .flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 20px;
+}
+.contact .container .flex iframe {
+  max-width: 100%;
+  -webkit-box-shadow: 0px 0px 20px #ddd;
+          box-shadow: 0px 0px 20px #ddd;
+  padding: 20px;
+  border: none;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 40%;
+          flex: 1 1 40%;
+  height: 450px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.contact .container .flex form {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 40%;
+          flex: 1 1 40%;
+  -webkit-box-shadow: 0px 0px 20px #ddd;
+          box-shadow: 0px 0px 20px #ddd;
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 450px;
+}
+.contact .container .flex form input {
+  padding: 10px 0px;
+  margin: 10px 0px;
+}
+.contact .container .flex form input::-webkit-input-placeholder {
+  -webkit-transform: translateX(10px);
+          transform: translateX(10px);
+}
+.contact .container .flex form input::-moz-placeholder {
+  transform: translateX(10px);
+}
+.contact .container .flex form input:-ms-input-placeholder {
+  transform: translateX(10px);
+}
+.contact .container .flex form input::-ms-input-placeholder {
+  transform: translateX(10px);
+}
+.contact .container .flex form input::placeholder {
+  -webkit-transform: translateX(10px);
+          transform: translateX(10px);
+}
+.contact .container .flex form textarea {
+  resize: none;
+  overflow-x: hidden;
+}
+.contact .container .flex form textarea::-webkit-input-placeholder {
+  -webkit-transform: translateX(10px);
+          transform: translateX(10px);
+}
+.contact .container .flex form textarea::-moz-placeholder {
+  transform: translateX(10px);
+}
+.contact .container .flex form textarea:-ms-input-placeholder {
+  transform: translateX(10px);
+}
+.contact .container .flex form textarea::-ms-input-placeholder {
+  transform: translateX(10px);
+}
+.contact .container .flex form textarea::placeholder {
+  -webkit-transform: translateX(10px);
+          transform: translateX(10px);
+}
+.contact .container .flex form input[type=submit] {
+  padding: 8px 20px;
+  text-transform: capitalize;
+  font-weight: bold;
+  background-color: rgb(250, 6, 55);
+  color: white;
+  position: relative;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  z-index: 0;
+  cursor: pointer;
+  margin: 15px 0px;
+  width: 200px;
+}
+.contact .container .flex form input[type=submit]::before {
+  position: absolute;
+  content: "";
+  background-color: black;
+  width: 0%;
+  height: 100%;
+  -webkit-transition: 0.3s linear;
+  transition: 0.3s linear;
+  top: 0%;
+  left: 0%;
+  z-index: -1;
+  border-radius: 6px;
+}
+.contact .container .flex form input[type=submit]:hover::before {
+  width: 100%;
+}
+.contact .container .flex form input[type=submit]:hover {
+  color: white;
+}
+.contact .container .flex form input[type=submit]:hover {
+  -webkit-transition: 0.3s linear;
+  transition: 0.3s linear;
+  background-color: black;
+}
+
+@media (max-width: 450px) {
+  .contact .container .grid-1 {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  }
+}
+@media (max-width: 550px) {
+  .contact .container .flex form {
+    height: 500px;
+  }
+  .contact .container .flex form input {
+    margin: 15px 0px;
+  }
+}
