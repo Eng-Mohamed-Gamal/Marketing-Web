@@ -583,4 +583,42 @@ a {
 
 // Contact
 
+// Footer
+
+.footer{
+  background-color: #ddd;
+  .container{
+    padding: 30px 0px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(300px , 1fr));
+    gap: 20px;
+    .col{
+      .row{
+        display: flex;
+       align-items: center;
+       gap: 10px; 
+       i{
+        color: $btn-color;
+       }
+       p{
+        text-transform: capitalize;
+        font-weight: bold;
+       }
+      }
+      &:nth-of-type(2){
+        .row{
+          // margin: 16px;
+          height: 50.4px;
+          a{
+            color: black;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Footer
+
 

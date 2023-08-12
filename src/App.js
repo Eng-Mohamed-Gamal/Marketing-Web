@@ -1,4 +1,5 @@
 
+import Footer from './Common/Footer';
 import Header from './Common/Header';
 import About from './Components/About';
 import Contact from './Components/Contact';
@@ -20,6 +21,7 @@ function App() {
       <Pricing></Pricing>
       <Review></Review>
       <Contact></Contact>
+      <Footer></Footer>
     </div>
   );
 }

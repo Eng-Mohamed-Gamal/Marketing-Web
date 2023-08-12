@@ -748,3 +748,36 @@ a {
     margin: 15px 0px;
   }
 }
+.footer {
+  background-color: #ddd;
+}
+.footer .container {
+  padding: 30px 0px;
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+.footer .container .col .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+}
+.footer .container .col .row i {
+  color: rgb(250, 6, 55);
+}
+.footer .container .col .row p {
+  text-transform: capitalize;
+  font-weight: bold;
+}
+.footer .container .col:nth-of-type(2) .row {
+  height: 50.4px;
+}
+.footer .container .col:nth-of-type(2) .row a {
+  color: black;
+  font-weight: bold;
+}

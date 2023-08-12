@@ -1,6 +1,11 @@
 import React from 'react'
 
 export default function Contact() {
+
+const Handle = (e) =>{
+e.preventDefault()
+} 
+
   return (
 <div className="contact" id='Contact'>
     <h1 className="cen"><span>contact</span> us</h1>
@@ -24,7 +29,7 @@ export default function Contact() {
         </div>
         <div className="flex">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6511991.782757467!2d-124.5952563472036!3d37.1602248776906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb9fe5f285e3d%3A0x8b5109a227086f55!2sCalifornia%2C%20USA!5e0!3m2!1sen!2seg!4v1691857668042!5m2!1sen!2seg" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        <form action="">
+        <form action="" onSubmit={Handle}>
             <input type="text" placeholder='Name' />
             <input type="email"  placeholder='email'/>
             <input type="number"  placeholder='Numbr'/>
