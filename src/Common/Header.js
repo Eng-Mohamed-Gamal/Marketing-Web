@@ -1,10 +1,11 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 
 export default function Header() {
-
+const [tog , setTog] = useState(false)
 const barsRef = useRef()
 
   const Bars = () =>{
+    setTog(!tog)
     barsRef.current.classList.toggle("translate")
     if(barsRef.current.classList.contains("translate")){
         barsRef.current.classList.add("trans")
@@ -27,7 +28,7 @@ const barsRef = useRef()
             <li><a href="#Review">Review</a></li>
             <li><a href="#Contact">Contact</a></li>
         </ul>
-        <i class="fa-solid fa-bars" onClick={Bars} ></i>
+        <i class={tog ? "fa-solid fa-times" : "fa-solid fa-bars"} onClick={Bars} ></i>
     </div>
 </div>
   )
