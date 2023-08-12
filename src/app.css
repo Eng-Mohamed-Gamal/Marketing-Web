@@ -58,7 +58,7 @@ a {
           align-items: center;
 }
 .header .container h1 {
-  color: #999;
+  color: rgb(250, 6, 55);
 }
 .header .container ul {
   z-index: 1000;
@@ -68,7 +68,7 @@ a {
   gap: 15px;
 }
 .header .container ul a {
-  color: #999;
+  color: rgb(250, 6, 55);
   font-size: 17px;
   border-radius: 6px;
 }
@@ -466,4 +466,57 @@ a {
   .portfolio .container img {
     width: 100%;
   }
+}
+.price .container {
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 20px;
+}
+.price .container .box {
+  -webkit-box-shadow: 0px 0px 20px #ddd;
+          box-shadow: 0px 0px 20px #ddd;
+  text-align: center;
+}
+.price .container .box h1 {
+  color: rgb(250, 6, 55);
+}
+.price .container .box h1 span {
+  font-size: 15px;
+}
+.price .container .box p {
+  color: #999;
+}
+.price .container .box button {
+  padding: 8px 20px;
+  text-transform: capitalize;
+  font-weight: bold;
+  background-color: rgb(250, 6, 55);
+  color: white;
+  position: relative;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  z-index: 0;
+  cursor: pointer;
+  margin: 15px 0px;
+}
+.price .container .box button::before {
+  position: absolute;
+  content: "";
+  background-color: black;
+  width: 0%;
+  height: 100%;
+  -webkit-transition: 0.3s linear;
+  transition: 0.3s linear;
+  top: 0%;
+  left: 0%;
+  z-index: -1;
+  border-radius: 6px;
+}
+.price .container .box button:hover::before {
+  width: 100%;
+}
+.price .container .box button:hover {
+  color: white;
 }

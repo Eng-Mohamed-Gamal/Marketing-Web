@@ -88,14 +88,14 @@ a{
         justify-content: space-between;
         align-items: center;
         h1{
-            color: #999;
+            color: $btn-color;
         }
         ul{
             z-index: 1000;
             display: flex;
             gap: 15px;
             a{
-                color: #999;
+                color: $btn-color;
                 font-size: 17px;
                 border-radius: 6px;
                 &:hover{
@@ -398,3 +398,31 @@ height: auto;
 }
 
 // Portfolio
+
+// Pricing
+
+.price{
+    .container{
+        display: grid;
+        grid-template-columns: repeat(auto-fill , minmax(350px , 1fr));
+        gap: 20px;
+        .box{
+            box-shadow: $box-shadow;
+            text-align: center;
+            h1{
+                color: $btn-color;
+                span{
+                    font-size: 15px;
+                }
+            }
+            p{
+                color: #999;
+            }
+            button {
+                @include btn()
+            }
+        }
+    }
+}
+
+// Pricing
